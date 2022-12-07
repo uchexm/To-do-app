@@ -4,9 +4,47 @@ import _ from "lodash";
 import "./style.css";
 
 const body = document.getElementById("todos-list");
-let taskno = 0;
-let taskLists = [];
+// let taskno = 0;
+const taskLists = [
+  {
+    description: "Walk Dogs",
+    completed: false,
+    index: 0,
+  },
+  {
+    description: "Learn Javascript",
+    completed: false,
+    index: 1,
+  },
+  {
+    description: "Rest",
+    completed: false,
+    index: 2,
+  },
+];
 
+const printTasks = (task) => {
+  const newDiv = document.querySelector(".tod");
+  newDiv.innerHTML += `
+    <div class="tod" id="${task.index}">
+          <i class="fa fa-circle-thin" aria-hidden="true"></i>
+          <p id="checked" class="checked">
+            ${task.description}
+            <i id="af">
+              <i class="fa fa-pencil-square" aria-hidden="true"></i>
+              <i class="fa fa-trash" aria-hidden="true"></i>
+            </i>
+          </p>
+        </div>
+        <hr />
+    `;
+};
+
+document.addEventListener("DOMContentLoaded", () => {
+  taskLists.sort((a, b) => a.index - b.index).map((item) => printTasks(item));
+});
+
+/*
 function printfn() {
   body.replaceChildren();
   const localtasks = JSON.parse(localStorage.getItem("tasks"));
@@ -49,3 +87,5 @@ addicn.addEventListener("click", () => {
     document.forms[0].reset();
   }
 });
+
+*/
