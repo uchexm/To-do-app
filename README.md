@@ -53,7 +53,7 @@ After you're finished please remove all the comments and instructions!
 
 # 📖 [To Do List App] <a name="about-project"></a>
 
-Awesome-books project is a basic website that allows users to add/remove books from a list. It showcases the use of JavaScript objects and arrays to dynamically modify the DOM and add basic events..
+To do list project is a simple web app that allows users to add/remove to do tasks from a list. It showcases the use of JavaScript objects and arrays to dynamically modify the DOM and add basic events..
 
 ## 🛠 Built With <a name="built-with"></a>
 
