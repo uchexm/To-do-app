@@ -1,12 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+      type="text/css"
+    />
+    <link rel="stylesheet" href="style.css" type="text/css" />
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>To do List</title>
+    <script src="/main.js"></script>
   </head>
   <body>
-    djncjnvdcjnsdjcv
+    <section class="container">
+      <header>
+        <div class="header">
+          <h3>
+            Today's To Do <i class="fa fa-refresh" aria-hidden="true"></i>
+          </h3>
+          <hr />
+        </div>
+        <div class="new-todo">
+          <form action="" id="todoform">
+            <input
+              class="nt"
+              type="text"
+              name="newtodo"
+              id="newtodo"
+              placeholder="I will do ..."
+            />
+            <button id="bt" title="text" type="submit">
+              <i class="fa fa-plus"></i>
+            </button>
+          </form>
+          <hr />
+        </div>
+      </header>
+      <div id="todos-list">
+        <div class="tod" id="0">
+          <!i class="fa fa-check-circle" aria-hidden="true"></i>
+          <i class="fa fa-circle-thin" aria-hidden="true"></i>
+          <p id="checked" class="checked">
+            drink
+            <i id="af">
+              <i class="fa fa-pencil-square" aria-hidden="true"></i>
+              <i class="fa fa-trash" aria-hidden="true"></i>
+            </i>
+          </p>
+        </div>
+        <hr />
+      </div>
+    </section>
+    <footer>
+      <button id="reset" type="reset">Clear all completed</button>
+    </footer>
   </body>
 </html>

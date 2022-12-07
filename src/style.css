@@ -1,7 +1,48 @@
-.hello {
-  color: red;
-  background: url("./ic.jpeg");
-}
 body {
-  background-color: bisque;
+  background-image: url("./ic.jpeg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 5px;
+}
+
+.nt {
+  width: 97%;
+  height: 40px;
+}
+
+#bt {
+  height: 40px;
+  margin-top: 5px;
+  cursor: pointer;
+}
+
+.fa-refresh,
+.fa-arrows-v,
+#bt {
+  float: right;
+  height: 30px;
+}
+
+#af {
+  display: inline;
+  float: right;
+}
+
+#checked {
+  display: inline;
+}
+
+#reset {
+  margin: 2px 2px 5px 4px;
+  bottom: 0;
+  width: 97%;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  padding-left: 620px;
+}
+
+li {
+  text-decoration: none;
+  list-style: none;
 }
