@@ -1,3 +1,9 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
 body {
   background-image: url("./ic.jpeg");
   background-repeat: no-repeat;
@@ -5,31 +11,36 @@ body {
   border-radius: 5px;
 }
 
-.nt {
-  width: 97%;
-  height: 40px;
-}
-
-#bt {
-  height: 40px;
-  margin-top: 5px;
+.i {
+  float: right;
   cursor: pointer;
 }
-
-.fa-refresh,
-.fa-arrows-v,
-#bt {
-  float: right;
-  height: 30px;
+i {
+  cursor: pointer;
+}
+.text {
+  display: inline;
 }
 
-#af {
-  display: inline;
-  float: right;
+#input {
+  height: 40px;
+  width: 95%;
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
-
-#checked {
-  display: inline;
+.fa-plus-square {
+  cursor: pointer;
+}
+.LINE_THROUGH {
+  text-decoration: line-through;
+}
+hr {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.fa-pencil-square,
+.fa-trash {
+  float: right;
 }
 
 #reset {
@@ -39,10 +50,6 @@ body {
   height: 50px;
   display: flex;
   align-items: center;
-  padding-left: 620px;
-}
-
-li {
-  text-decoration: none;
-  list-style: none;
+  justify-content: center;
+  cursor: pointer;
 }
