@@ -6,42 +6,49 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
       type="text/css"
     />
-    <link rel="stylesheet" href="in.css" type="text/css" />
+    <link rel="stylesheet" href="in.css" />
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>To do list</title>
+    <title>To do List</title>
   <script defer src="runtime.js"></script><script defer src="main.js"></script></head>
   <body>
-    <div class="container">
-      <div class="header">
-        <h3>
-          Today's To Do
-          <i id="clear" class="i fa fa-refresh" aria-hidden="true"></i>
-        </h3>
-        <div id="date"></div>
-        <hr />
-      </div>
-      <div class="content">
-        <div class="add-item">
-          <input type="text" id="input" placeholder="I will do..." />
-          <i class="fa fa-plus-square" aria-hidden="true"></i>
+    <div class="app">
+      <header>
+        <div class="header">
+          <h2>
+            Todays To do list
+            <i id="clear" class="i fa fa-refresh" aria-hidden="true"></i>
+          </h2>
         </div>
-        <ul id="list">
-          <!--<li class="item">
-            <i class="fa fa-circle-thin" aria-hidden="true" job="complete"></i>
-            <p class="text">Drink</p>
-              <i class="fa fa-pencil-square" aria-hidden="true" job="edit"></i>
-              <i class="fa fa-trash" aria-hidden="true" job="delete"></i>
-    
-          </li>-->
-          <hr />
-        </ul>
+        <div class="new-todo">
+          <form action="" id="todoform">
+            <input
+              type="text"
+              id="newtodo"
+              name="newtodo"
+              placeholder="I will do ..."
+            />
+            <button type="submit">
+              <i class="fa fa-plus-square" aria-hidden="true"></i>
+            </button>
+          </form>
+        </div>
+      </header>
+      <div id="tododslist">
+        <!--<div class="todo" id="0">
+          <i class="fa fa-check-circle" aria-hidden="true" job="complete"></i>
+          <i class="fa fa-circle-thin" aria-hidden="true"></i>
+          <p class="checked">milk</p>
+          <i class="fa fa-trash" aria-hidden="true" job="delete"></i>
+          <i class="fa fa-pencil-square" aria-hidden="true" job="edit"></i>
+        </div>-->
       </div>
+      <div class="notify"></div>
     </div>
     <footer>
-      <button id="reset" type="reset">Clear all completed</button>
+      <button id="reset" type="reset">Clear all</button>
     </footer>
-    <script src="/main.js"></script>
+    <script src="main.js"></script>
   </body>
 </html>

@@ -1,138 +1,139 @@
-// To select the elements
-const clear = document.getElementById("clear");
-const dateElement = document.getElementById("date");
-const list = document.getElementById("list");
-const input = document.getElementById("input");
-const reset = document.getElementById("reset");
+// select element
 
-//  To initialize classes
-const CHECK = "fa-check-circle";
-const UNCHECK = "fa-circle-thin";
-const LINE_THROUGH = "LINE_THROUGH";
+const form = document.getElementById("todoform");
+const todoInput = document.getElementById("newtodo");
+const todoListElement = document.getElementById("tododslist");
+const notifyElement = document.querySelector(".notify");
+// My variables
+let todos = JSON.parse(localStorage.getItem("todos")) || [];
+let editToDoId = -1;
 
-let LIST, id;
+// First render
+renderTodos();
 
-//get item from localstaorage
-let data = localStorage.getItem("TODO");
+// To submit form
+form.addEventListener("submit", function (event) {
+  event.preventDefault();
 
-if (data) {
-  LIST = JSON.parse(data);
-  id = LIST.length;
-  loadList(LIST);
-} else {
-  LIST = [];
-  id = 0;
-}
-
-function loadList(array) {
-  array.forEach(function (item) {
-    addTodo(item.name, item.id, item.done, item.trash);
-  });
-}
-// clear all completed
-reset.addEventListener("click", function () {
-  localStorage.clear();
-  location.reload();
+  saveTodo();
+  renderTodos();
+  localStorage.setItem("todos", JSON.stringify(todos));
 });
 
-// To show date
-const options = { weekday: "long", month: "short", day: "numeric" };
-const today = new Date();
+// to save to do
+function saveTodo() {
+  const todoValue = todoInput.value;
 
-dateElement.innerHTML = today.toLocaleDateString("en-US", options);
+  // check if empty
+  const isEmpty = todoValue === "";
 
-//add
-function addTodo(toDo, id, done, trash) {
-  if (trash) {
+  //  check for duplicates
+  const isDuplicate = todos.some(
+    (todo) => todo.value.toUpperCase() === todoValue.toUpperCase()
+  );
+  if (isEmpty) {
+    showNotification("Todos input emppty");
+  } else if (isDuplicate) {
+    showNotification("Todo exists");
+  } else {
+    if (editToDoId >= 0) {
+      // update the edited to do
+      todos = todos.map((todo, index) => ({
+        ...todo,
+        value: index === editToDoId ? todoValue : todo.value,
+      }));
+      editToDoId = -1;
+    } else {
+      todos.push({
+        value: todoValue,
+        checked: false,
+        color:
+          "#" + (((1 << 24) * Math.random()) | 0).toString(16).padStart(6, "0"),
+      });
+    }
+
+    todoInput.value = "";
+  }
+}
+// Render todos
+function renderTodos() {
+  if (todos.length === 0) {
+    todoListElement.innerHTML = "<center>Nothing to do!</center>";
     return;
   }
-  const DONE = done ? CHECK : UNCHECK;
-  const LINE = done ? LINE_THROUGH : "";
+  // clear element before rerender
+  todoListElement.innerHTML = "";
 
-  const item = `
-          <li class="item">  
-            <i class="fa ${DONE} co" aria-hidden="true" job="complete" id=${id}></i>
-            <p class="text ${LINE}">${toDo}</p>
-            <i class="fa fa-trash" aria-hidden="true" job="delete" id=${id}></i>
-            <i class="fa fa-pencil-square" aria-hidden="true" job="edit" id=${id}></i>
-            <hr>
-          </li>  
-          `;
-  const position = "beforeend";
-  list.insertAdjacentHTML(position, item);
-}
-
-// add item when user clicks enter
-document.addEventListener("keyup", function (even) {
-  if (event.keyCode == 13) {
-    const toDo = input.value;
-    // if input is not empty
-    if (toDo) {
-      addTodo(toDo);
-
-      LIST.push({
-        name: toDo,
-        id: id,
-        done: false,
-        trash: false,
-      });
-
-      localStorage.setItem("TODO", JSON.stringify(LIST));
-
-      id++;
-    }
-    input.value = "";
-  }
-});
-
-document
-  .querySelector(".fa-plus-square")
-  .addEventListener("click", function () {
-    const toDo = input.value;
-    // if input is not empty
-    if (toDo) {
-      addTodo(toDo);
-
-      LIST.push({
-        name: toDo,
-        id: id,
-        done: false,
-        trash: false,
-      });
-
-      localStorage.setItem("TODO", JSON.stringify(LIST));
-
-      id++;
-    }
-    input.value = "";
+  // render to do
+  todos.forEach((todo, index) => {
+    todoListElement.innerHTML += `
+        <div class="todo" id="${index}">
+          <i class="fa ${
+            todo.checked ? "fa-check-circle" : "fa-circle-thin"
+          } aria-hidden="true" job="complete"
+          style="color : ${todo.color}" data-action="check"></i>
+          <p class="${todo.checked ? "check" : ""}" data-action="check">${
+      todo.value
+    }</p>
+          <i class="fa fa-trash" aria-hidden="true" data-action="delete" job="delete"></i>
+          <i class="fa fa-pencil-square" aria-hidden="true" data-action="edit" job="edit"></i>
+        </div>
+        <hr>
+    `;
   });
-// complete to do
-
-function completeToDo(element) {
-  element.classList.toggle(CHECK);
-  element.classList.toggle(UNCHECK);
-  element.queryselector(".text").classList.toggle(LINE_THROUGH);
-
-  LIST[element.id].done = LIST[element.id].done ? false : true;
 }
+// event listeneres for to dos
+todoListElement.addEventListener("click", (event) => {
+  const target = event.target;
+  const parentElement = target.parentNode;
 
-//To remove to do
-function removeToDo(element) {
-  element.parentNode.parentNode.removeChild(element.parentNode);
+  if (parentElement.className !== "todo") return;
 
-  LIST[element.id].trash = true;
-}
+  // to do id
 
-// target lists dynamic
+  const todo = parentElement;
+  const todoId = Number(todo.id);
 
-list.addEventListener("click", function (event) {
-  const element = event.target;
-  const elementJob = element.attributes.job.value;
+  // target action
+  const action = target.dataset.action;
 
-  if (elementJob == "complete") {
-    completeToDo(element);
-  } else if (elementJob == "delete") {
-    removeToDo(element);
-  }
-  localStorage.setItem("TODO", JSON.stringify(LIST));
+  action === "check" && checkToDo(todoId);
+  action === "edit" && editToDo(todoId);
+  action === "delete" && deleteToDo(todoId);
 });
+
+// check a to do
+function checkToDo(todoId) {
+  todos = todos.map((todo, index) => ({
+    ...todo,
+    checked: index === todoId ? !todo.checked : todo.checked,
+  }));
+
+  renderTodos();
+  localStorage.setItem("todos", JSON.stringify(todos));
+}
+
+//edit a todo
+function editToDo(todoId) {
+  todoInput.value = todos[todoId].value;
+  editToDoId = todoId;
+}
+
+// delete to do
+function deleteToDo(todoId) {
+  todos = todos.filter((todo, index) => index !== todoId);
+  editToDoId = -1;
+
+  renderTodos();
+  localStorage.setItem("todos", JSON.stringify(todos));
+}
+
+function showNotification(msg) {
+  notifyElement.innerHTML = msg;
+
+  notifyElement.classList.add("notified");
+
+  setTimeout(() => {
+    notifyElement.classList.remove("notified");
+  }, 2000);
+}
