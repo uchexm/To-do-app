@@ -8,9 +8,11 @@ body {
   background-size: cover;
   border-radius: 5px;
 }
+
 .header {
   display: inline;
 }
+
 .fa-refresh {
   float: right;
 }
@@ -20,21 +22,26 @@ body {
   height: 40px;
   margin-bottom: 20px;
 }
+
 p {
   display: inline;
 }
+
 .check {
   text-decoration: line-through;
   display: inline;
 }
+
 i {
   cursor: pointer;
 }
+
 .fa-pencil-square,
 .fa-trash {
   float: right;
   padding-left: 10px;
 }
+
 #reset {
   margin: 2px 2px 5px 4px;
   bottom: 0;
@@ -46,6 +53,7 @@ i {
   justify-content: center;
   cursor: pointer;
 }
+
 .notified {
   height: 40px;
   width: 300px;
