@@ -51,6 +51,7 @@ function saveTodo() {
       editToDoId = -1;
     } else {
       todos.push({
+        index: todos.length + 1,
         value: todoValue,
         checked: false,
         color: `#${(((1 << 24) * Math.random()) | 0)
@@ -129,6 +130,11 @@ function editToDo(todoId) {
 // delete to do
 function deleteToDo(todoId) {
   todos = todos.filter((todo, index) => index !== todoId);
+  let n = 1;
+  todos.forEach((todo) => {
+    todo.index = n;
+    n += 1;
+  });
   editToDoId = -1;
 
   renderTodos();
