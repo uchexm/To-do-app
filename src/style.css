@@ -1,3 +1,7 @@
+* {
+  box-sizing: border-box;
+}
+
 body {
   background-image: url("./ic.jpeg");
   background-repeat: no-repeat;
@@ -5,44 +9,58 @@ body {
   border-radius: 5px;
 }
 
-.nt {
-  width: 97%;
-  height: 40px;
+.header {
+  display: inline;
 }
 
-#bt {
+.fa-refresh {
+  float: right;
+}
+
+#newtodo {
+  width: 94%;
   height: 40px;
-  margin-top: 5px;
+  margin-bottom: 20px;
+}
+
+p {
+  display: inline;
+}
+
+.check {
+  text-decoration: line-through;
+  display: inline;
+}
+
+i {
   cursor: pointer;
 }
 
-.fa-refresh,
-.fa-arrows-v,
-#bt {
+.fa-pencil-square,
+.fa-trash {
   float: right;
-  height: 30px;
-}
-
-#af {
-  display: inline;
-  float: right;
-}
-
-#checked {
-  display: inline;
+  padding-left: 10px;
 }
 
 #reset {
   margin: 2px 2px 5px 4px;
   bottom: 0;
+  position: absolute;
   width: 97%;
   height: 50px;
   display: flex;
   align-items: center;
-  padding-left: 620px;
+  justify-content: center;
+  cursor: pointer;
 }
 
-li {
-  text-decoration: none;
-  list-style: none;
+.notified {
+  height: 40px;
+  width: 300px;
+  background-color: red;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  color: white;
+  margin: auto;
 }

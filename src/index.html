@@ -6,54 +6,49 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
       type="text/css"
     />
-    <link rel="stylesheet" href="style.css" type="text/css" />
+    <link rel="stylesheet" href="in.css" />
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>To do List</title>
-    <script src="/main.js"></script>
   </head>
   <body>
-    <section class="container">
+    <div class="app">
       <header>
         <div class="header">
-          <h3>
-            Today's To Do <i class="fa fa-refresh" aria-hidden="true"></i>
-          </h3>
-          <hr />
+          <h2>
+            Todays To do list
+            <i id="clear" class="i fa fa-refresh" aria-hidden="true"></i>
+          </h2>
         </div>
         <div class="new-todo">
           <form action="" id="todoform">
             <input
-              class="nt"
               type="text"
-              name="newtodo"
               id="newtodo"
+              name="newtodo"
               placeholder="I will do ..."
             />
-            <button id="bt" title="text" type="submit">
-              <i class="fa fa-plus"></i>
+            <button type="submit">
+              <i class="fa fa-plus-square" aria-hidden="true"></i>
             </button>
           </form>
-          <hr />
         </div>
       </header>
-      <div id="todos-list">
-        <div class="tod" id="0">
-          <!--<!i class="fa fa-check-circle" aria-hidden="true"></i>
+      <div id="tododslist">
+        <!--<div class="todo" id="0">
+          <i class="fa fa-check-circle" aria-hidden="true" job="complete"></i>
           <i class="fa fa-circle-thin" aria-hidden="true"></i>
-          <p id="checked" class="checked">
-            drink
-            <i id="af">
-              <i class="fa fa-pencil-square" aria-hidden="true"></i>
-              <i class="fa fa-trash" aria-hidden="true"></i>
-            </i>
-          </p>-->
-        </div>
+          <p class="checked">milk</p>
+          <i class="fa fa-trash" aria-hidden="true" job="delete"></i>
+          <i class="fa fa-pencil-square" aria-hidden="true" job="edit"></i>
+        </div>-->
       </div>
-    </section>
+      <div class="notify"></div>
+    </div>
     <footer>
-      <button id="reset" type="reset">Clear all completed</button>
+      <button id="reset" type="reset">Clear all</button>
     </footer>
+    <script src="main.js"></script>
   </body>
 </html>
