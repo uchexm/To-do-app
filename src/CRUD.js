@@ -1,3 +1,5 @@
+/* eslint-disable prefer-const */
+/* eslint-disable prefer-template */
 /* eslint-disable indent */
 /* eslint-disable comma-dangle */
 /* eslint-disable quotes */
@@ -167,3 +169,15 @@ function clearCompleted(element) {
     localStorage.setItem("todos", JSON.stringify(todos));
   });
 }
+
+// To generate background
+function randomBackground() {
+  let x = Math.floor(Math.random() * 256);
+  let y = Math.floor(Math.random() * 256);
+  let z = Math.floor(Math.random() * 256);
+
+  let bgColor = "rgb(" + x + "," + y + "," + z + ")";
+
+  document.body.style.background = bgColor;
+}
+randomBackground();

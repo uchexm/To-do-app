@@ -35,7 +35,7 @@ After you're finished please remove all the comments and instructions!
 
 # 📗 Table of Contents
 
-- [� Table of Contents](#-table-of-contents)
+- [📗 Table of Contents](#-table-of-contents)
 - [📖 \[To Do List App\] ](#-to-do-list-app-)
   - [🛠 Built With ](#-built-with-)
     - [Tech Stack ](#tech-stack-)
@@ -86,6 +86,8 @@ To do list project is a simple web app that allows users to add/remove to do tas
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- LIVE DEMO -->
+
+https://uchexm.github.io/To-DO/dist/
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
