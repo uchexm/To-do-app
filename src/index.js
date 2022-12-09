@@ -1,3 +1,4 @@
+/* eslint-disable linebreak-style */
 /* eslint-disable quotes */
 /* eslint-disable no-unused-vars */
 import _ from "lodash";
