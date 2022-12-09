@@ -9,6 +9,7 @@
 const form = document.getElementById("todoform");
 const todoInput = document.getElementById("newtodo");
 const todoListElement = document.getElementById("tododslist");
+const clean = document.getElementById("reset");
 
 // My variables
 let todos = JSON.parse(localStorage.getItem("todos")) || [];
@@ -16,6 +17,7 @@ let editToDoId = -1;
 
 // First render
 renderTodos();
+clearCompleted(todoListElement);
 
 // To submit form
 form.addEventListener("submit", (event) => {
@@ -51,7 +53,7 @@ function saveTodo() {
       editToDoId = -1;
     } else {
       todos.push({
-        index: todos.length + 1,
+        index: todos.length,
         value: todoValue,
         checked: false,
         color: `#${(((1 << 24) * Math.random()) | 0)
@@ -85,8 +87,9 @@ function renderTodos() {
     }</p>
           <i class="fa fa-trash" aria-hidden="true" data-action="delete" job="delete"></i>
           <i class="fa fa-pencil-square" aria-hidden="true" data-action="edit" job="edit"></i>
+          <hr>
         </div>
-        <hr>
+        
     `;
   });
 }
@@ -108,6 +111,7 @@ todoListElement.addEventListener("click", (event) => {
   action === "check" && checkToDo(todoId);
   action === "edit" && editToDo(todoId);
   action === "delete" && deleteToDo(todoId);
+  // action === "check" && clearCompleted(todoId);
 });
 
 // check a to do
@@ -118,6 +122,7 @@ function checkToDo(todoId) {
   }));
 
   renderTodos();
+  clearCompleted(todoListElement);
   localStorage.setItem("todos", JSON.stringify(todos));
 }
 
@@ -130,7 +135,7 @@ function editToDo(todoId) {
 // delete to do
 function deleteToDo(todoId) {
   todos = todos.filter((todo, index) => index !== todoId);
-  let n = 1;
+  let n = 0;
   todos.forEach((todo) => {
     todo.index = n;
     n += 1;
@@ -138,5 +143,27 @@ function deleteToDo(todoId) {
   editToDoId = -1;
 
   renderTodos();
+  clearCompleted(todoListElement);
   localStorage.setItem("todos", JSON.stringify(todos));
+}
+
+function clearCompleted(element) {
+  clean.addEventListener("click", () => {
+    element.querySelectorAll(".todo").forEach((list) => {
+      const taskId = parseInt(list.id, 10);
+      // console.log(taskId);
+      const parentnode = list;
+      todos.forEach((todo) => {
+        if (todo.checked && todo.index === taskId) {
+          parentnode.remove();
+        }
+      });
+    });
+    todos = todos.filter((todo) => todo.checked !== true);
+    for (let i = 0; i < todos.length; i += 1) {
+      todos[i].index = i;
+      localStorage.setItem("todos", JSON.stringify(todos));
+    }
+    localStorage.setItem("todos", JSON.stringify(todos));
+  });
 }

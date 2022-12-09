@@ -8,4 +8,5 @@ function refresh() {
     location.reload();
   });
 }
+
 export { refresh };
