@@ -53,7 +53,7 @@ After you're finished please remove all the comments and instructions!
 
 # 📖 [To Do List App] <a name="about-project"></a>
 
-To do list project is a simple web app that allows users to add/remove to do tasks from a list. It showcases the use of JavaScript objects and arrays to dynamically modify the DOM and add basic events..
+This is a simple To do list web app that allows users to add/remove to do tasks from the list. It uses JavaScript objects and arrays to dynamically modify the DOM and add basic events..
 
 ## 🛠 Built With <a name="built-with"></a>
 
