@@ -12,7 +12,7 @@ REQUIRED SECTIONS:
   - Built With,
   - Live Demo
 - Getting Started
-- Authors
+- Author
 - Future Features
 - Contributing
 - Show your support
