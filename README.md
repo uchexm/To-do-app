@@ -36,7 +36,7 @@ After you're finished please remove all the comments and instructions!
 # 📗 Table of Contents
 
 - [� Table of Contents](#-table-of-contents)
-- [📖 \[To Do List App\] ](#-to-do-list-app-)
+- [📖 To Do List App ](#-to-do-list-app-)
   - [🛠 Built With ](#-built-with-)
     - [Tech Stack ](#tech-stack-)
     - [Key Features ](#key-features-)
@@ -79,13 +79,17 @@ This is a simple To do list web app that allows users to add/remove to do tasks 
 
 ### Key Features <a name="key-features"></a>
 
-- **[Add_to do lists]**
-- **[Remove_To do listss]**
-- **[Store_To do lists]**
+ **Add_to do lists**
+ **Remove_To do listss**
+ **Store_To do lists**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- LIVE DEMO -->
+
+## 🚀 Live Demo <a name="live-demo"></a>
+
+- [Live Demo Link](https://todo-app-xbn1.onrender.com)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
