@@ -79,9 +79,9 @@ This is a simple To do list web app that allows users to add/remove to do tasks 
 
 ### Key Features <a name="key-features"></a>
 
- **Add_to do lists**
- **Remove_To do listss**
- **Store_To do lists**
+ - **Add_to do lists**
+ - **Remove_To do listss**
+ - **Store_To do lists**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
