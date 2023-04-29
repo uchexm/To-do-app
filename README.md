@@ -75,7 +75,7 @@ This is a simple To do list web app that allows users to add/remove to do tasks 
   </ul>
 </details>
 
-<!-- Features -->
+<!-- Feature -->
 
 ### Key Features <a name="key-features"></a>
 
