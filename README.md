@@ -85,7 +85,7 @@ This is a simple To do list web app that allows users to add/remove to do tasks 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-<!-- LIVE DEMO -->
+<!-- LIVE DEM -->
 
 ## 🚀 Live Demo <a name="live-demo"></a>
 
