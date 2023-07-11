@@ -53,7 +53,10 @@ After you're finished please remove all the comments and instructions!
 
 ## 📖 To Do List <a name="about-project"></a>
 
-This to-do list is an application designed to help individuals organize and manage their tasks and activities. It provides a digital platform for users to create, track, and prioritize their to-do items in an efficient and convenient manner.
+This to-do list app is a digital tool that helps users stay organized and on track with their tasks. It allows the user to create lists of tasks, check completed tasks, delete tasks, and add more.
+It is built with the user in mind to improve productivity and reduce stress. Helping you stay organized, keep track of all your tasks in one place and avoid forgetting about important tasks and deadlines. 
+This app helps you track your progress on tasks so that you can see how you're doing and make adjustments as needed. This app is most helpful if you're working on a project with a team.
+If you're looking for a way to improve your productivity and reduce stress, this to-do list app is a great tool.
 
 ## 🛠 Built With <a name="built-with"></a>
 
