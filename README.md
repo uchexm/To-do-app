@@ -51,13 +51,11 @@ After you're finished please remove all the comments and instructions!
 
 <!-- PROJECT DESCRIPTION -->
 
-# 📖 [To Do List App] <a name="about-project"></a>
+## 📖 To Do List <a name="about-project"></a>
 
-This is a simple To do list web app that allows users to add/remove to do tasks from the list. It uses JavaScript objects and arrays to dynamically modify the DOM and add basic events..
+This to-do list is an application designed to help individuals organize and manage their tasks and activities. It provides a digital platform for users to create, track, and prioritize their to-do items in an efficient and convenient manner.
 
 ## 🛠 Built With <a name="built-with"></a>
-
-### Tech Stack <a name="tech-stack"></a>
 
 <details>
   <summary>Client</summary>
@@ -125,7 +123,7 @@ Example commands:
 
 ```sh
   cd my-folder
-  git clone git@github.com:myaccount/my-project.git
+  git clone git@github.com:uchexm/To-do-app.git
 ```
 --->
 
@@ -151,8 +149,8 @@ Example:
 
 👤 **Uchechi Nwaka**
 
-- GitHub: [@githubhandle](https://github.com/uchexm)
-- LinkedIn: [LinkedIn](https://www.linkedin.com/in/uchechi-nwaka-79a21a75/)
+- [GitHub](https://github.com/uchexm)
+- [LinkedIn](https://www.linkedin.com/in/uchechi-nwaka-79a21a75/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
