@@ -91,6 +91,16 @@ This to-do list is an application designed to help individuals organize and mana
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
+<!-- GETTING STARTED -->
+
+## 💻 Getting Started <a name="getting-started"></a>
+
+$ git clone git@github.com:uchexm/To-do-app.git
+
+$ cd To-Do-app
+
+Then open index.html on the bowser to run the project
+
 ### Prerequisites
 
 In order to run this project you need:
